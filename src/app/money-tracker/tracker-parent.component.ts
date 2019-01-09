@@ -19,6 +19,7 @@ export class TrackerParentComponent implements OnInit {
   constructor() {}
 
   formSubmit(){
+    console.log('DA');
     this.trackerModelOutput.emit(this.tracker);
   }
 
