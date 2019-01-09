@@ -1,20 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { FormsModule }   from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { IncomeComponent } from './income/income.component';
-import { ExpenseComponent } from './expense/expense.component';
+import { IncomeComponent } from './money-tracker/income/income.component';
+import { ExpenseComponent } from './money-tracker/expense/expense.component';
+import { TrackerParentComponent } from './money-tracker/tracker-parent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IncomeComponent,
-    ExpenseComponent
+    ExpenseComponent,
+    TrackerParentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
