@@ -1,4 +1,4 @@
-export class TrackerClass {
+export class Income {
     _id: string;
     name: string;
     date: number;

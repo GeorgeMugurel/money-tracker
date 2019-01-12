@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { TrackerClass } from '../tracker';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { Income } from './income-class';
 import { MoneyTrackerService } from 'src/app/money-tracker.service';
 
 @Component({
@@ -9,21 +9,30 @@ import { MoneyTrackerService } from 'src/app/money-tracker.service';
 })
 export class IncomeComponent implements OnInit {
 
-  income: TrackerClass = new TrackerClass();
-  restApiTracker: MoneyTrackerService;
-  categories = ['salary', 'night-shift', 'work-bonus'];
+  income: Income[];
+  restApi: MoneyTrackerService;
 
-  constructor(restApiTracker: MoneyTrackerService) {
-    this.restApiTracker = restApiTracker;
-  }
-
-  addIncome(income:TrackerClass) {
-    this.restApiTracker.saveIncome(income).subscribe(response=>{
-      console.log(response);
-    });
+  constructor(restApi : MoneyTrackerService){
+    this.restApi = restApi;
+    this.income = [];
   }
 
   ngOnInit() {
+    this.getIncomes();
+  }
+
+  getIncomes(): any {
+    this.restApi.getAll().subscribe(response => {
+      console.log(response);
+      this.income = response;
+    })
+  }
+
+  delete(income:Income) {
+    this.restApi.deleteIncome(income._id).subscribe(response=>{
+      console.log(response);
+      this.getIncomes();
+    });
   }
 
 }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TrackerParentComponent } from './tracker-parent.component';
+import { ExpenseformgroupComponent } from './expenseformgroup.component';
 
-describe('TrackerParentComponent', () => {
-  let component: TrackerParentComponent;
-  let fixture: ComponentFixture<TrackerParentComponent>;
+describe('ExpenseformgroupComponent', () => {
+  let component: ExpenseformgroupComponent;
+  let fixture: ComponentFixture<ExpenseformgroupComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TrackerParentComponent ]
+      declarations: [ ExpenseformgroupComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TrackerParentComponent);
+    fixture = TestBed.createComponent(ExpenseformgroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,19 +1,8 @@
 <div class="container">
-    <form #incomeForm="ngForm" (ngSubmit)="formSubmit()">
-        <div class="form-group">
-        <input class="form-control" type="text" [(ngModel)]="income.name" #model="ngModel" name="name" placeholder="Name" required/>
-        </div>
+    <div class="incomes" *ngFor='let u of income'>
+        <app-incomeitem [income]="u" (removeIncome)="delete($event)"></app-incomeitem>
+    </div>
 
-        <div class="form-group">
-        <input class="form-control" [(ngModel)]="income.date" #model="ngModel" name="date" type="number" placeholder="Date" required/>
-        </div>
+    <a routerLink="/income/add">Add income</a>
 
-        <div class="form-group">
-        <select class="form-control" #engine="ngModel" name="category" [(ngModel)]="income.category" id="sel1" required>
-        <option *ngFor="let category of categories">{{category}}</option>
-        </select>
-        </div>
-
-        <button class="btn btn-primary"  type="submit">Send</button>
-    </form>
 </div>
