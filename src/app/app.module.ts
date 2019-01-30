@@ -14,6 +14,9 @@ import { AddexpenseComponent } from './money-tracker/expense/addexpense/addexpen
 import { EditexpenseComponent } from './money-tracker/expense/editexpense/editexpense.component';
 import { ExpenseformgroupComponent } from './money-tracker/expense/expenseformgroup/expenseformgroup.component';
 import { IncomeitemComponent } from './money-tracker/income/incomeitem/incomeitem.component';
+import { ExpenseitemComponent } from './money-tracker/expense/expenseitem/expenseitem.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -26,15 +29,19 @@ import { IncomeitemComponent } from './money-tracker/income/incomeitem/incomeite
     AddexpenseComponent,
     EditexpenseComponent,
     ExpenseformgroupComponent,
-    IncomeitemComponent
+    IncomeitemComponent,
+    ExpenseitemComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    BsDatepickerModule.forRoot(),
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

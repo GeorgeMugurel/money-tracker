@@ -1,3 +1,3 @@
-<p>
-  editexpense works!
-</p>
+<div *ngIf ="expense">
+  <app-expenseformgroup [expense]="expense" (trackerModelOutputExpense)="editMyExpense($event)"></app-expenseformgroup>
+</div>

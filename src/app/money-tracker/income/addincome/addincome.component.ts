@@ -12,9 +12,9 @@ export class AddincomeComponent implements OnInit {
   income: Income = new Income();
   restApiIncome: MoneyTrackerService;
 
-  constructor(restApiCar : MoneyTrackerService) {
+  constructor(restApiIncome : MoneyTrackerService) {
 
-    this.restApiIncome = restApiCar; 
+    this.restApiIncome = restApiIncome; 
 
   }
 

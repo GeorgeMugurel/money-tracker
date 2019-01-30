@@ -12,8 +12,8 @@ export class EditincomeComponent implements OnInit {
 
   income: Income;
   restApiIncome: MoneyTrackerService;
-  constructor(restApiCar : MoneyTrackerService, private route:ActivatedRoute) {
-    this.restApiIncome = restApiCar; 
+  constructor(restApi : MoneyTrackerService, private route:ActivatedRoute) {
+    this.restApiIncome = restApi; 
   }
 
   ngOnInit() {

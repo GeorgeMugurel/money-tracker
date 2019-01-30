@@ -1,8 +1,18 @@
 <div class="container">
     <div class="incomes" *ngFor='let u of income'>
-        <app-incomeitem [income]="u" (removeIncome)="delete($event)"></app-incomeitem>
+        <app-incomeitem [income]="u" (remove)="delete($event)"></app-incomeitem>
     </div>
 
     <a routerLink="/income/add">Add income</a>
+
+
+    <div *ngIf="doughnutChartData" style="display: block">
+        <canvas baseChart
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+    </div>
 
 </div>

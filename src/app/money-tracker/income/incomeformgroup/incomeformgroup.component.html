@@ -5,7 +5,11 @@
       </div>
 
       <div class="form-group">
-      <input class="form-control" [(ngModel)]="income.date" #date="ngModel" name="date" type="number" placeholder="Date" required/>
+      <input class="form-control" [(ngModel)]="income.date" #date="ngModel" name="date" type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DDThh:mm:ss.sTZD' }" placeholder="Date" required/>
+      </div>
+      
+      <div class="form-group">
+        <input class="form-control" [(ngModel)]="income.amount" #date="ngModel" name="amount" type="number" placeholder="Amount" required/>
       </div>
 
       <div class="form-group">

@@ -1,6 +1,7 @@
 export class Income {
     _id: string;
     name: string;
-    date: number;
+    date: string;
+    amount: number;
     category: string;
 }

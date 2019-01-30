@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Expense } from '../expense-class';
+import { MoneyTrackerService } from 'src/app/money-tracker.service';
 
 @Component({
   selector: 'app-addexpense',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddexpenseComponent implements OnInit {
 
-  constructor() { }
+  expense: Expense = new Expense();
+  restApiIncome: MoneyTrackerService;
 
-  ngOnInit() {
+  constructor(restApiIncome : MoneyTrackerService) {
+
+    this.restApiIncome = restApiIncome; 
+
+  }
+
+  ngOnInit() {}
+
+  addExpense(expense:Expense) {
+    console.log('da');
+    this.restApiIncome.saveExpense(expense).subscribe(response=>{
+      console.log(response);
+    });
   }
 
 }

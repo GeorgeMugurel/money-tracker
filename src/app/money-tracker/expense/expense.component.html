@@ -1,3 +1,8 @@
-<p>
-  expense works!
-</p>
+<div class="container">
+  <div class="expense" *ngFor='let u of expense'>
+      <app-expenseitem [expense]="u" (expenseEmitter)="expenseDelete($event)"></app-expenseitem>
+  </div>
+
+  <a routerLink="/expense/add">Add expense</a>
+
+</div>
